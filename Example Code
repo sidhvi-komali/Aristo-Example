@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <style>
+        button {
+            background-color: #7e7e7e;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 5px 5px 5px #888888;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555555;
+            color: white;
+        }
+        button:active {
+            background-color: #4a4a4a;
+            box-shadow: 3px 2px #666666;
+            transform: translateY(4px);
+        }
+
+    </style>
+
+    
+    <div>
+        <button onclick = "showText('YOUR PROGRESS FOR SAT HERE!!')" dowload>SAT</button>
+        <button onclick = "showText('YOUR PROGRESS FOR PSAT HERE!!')" dowload>PSAT</button>
+        <button onclick = "showText('YOUR PROGRESS FOR ACT HERE!!')">ACT</button>
+        <button onclick = "showText('YOUR PROGRESS FOR ACT HERE!!')">AP</button>
+    </div>
+
+    <br><br>
+    <img id="image" style="display: none;" width="300">
+
+
+    <a href = "https://studentscores.collegeboard.org/scores/summary">Access your scores here!</a>
+
+    <script>
+        function showText(text) {
+            const image = document.getElementById('image');
+            image.style.display = 'none'; // Hide the image if visible
+            const existingText = document.getElementById('displayText');
+            if (existingText) {
+                existingText.remove(); // Remove existing text if present
+            }
+            const textElement = document.createElement('p');
+            textElement.id = 'displayText';
+            textElement.textContent = text;
+            document.body.appendChild(textElement);
+        }
+
+    </script>
+</html>
